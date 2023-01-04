@@ -7,11 +7,11 @@ type MysqlConfig struct {
 	User     string `json:"user"`
 	Pwd      string `json:"pwd"`
 	Database string `json:"database"`
-	Port     string `json:"port"`
+	Port     int64  `json:"port"`
 }
 
 func GetMysqlConfig(config config.Config, path ...string) *MysqlConfig {
-	myssqlConfig := &MysqlConfig{}
-	config.Get(path...).Scan(myssqlConfig)
-	return myssqlConfig
+	mysqlConfig := &MysqlConfig{}
+	config.Get(path...).Scan(mysqlConfig)
+	return mysqlConfig
 }
