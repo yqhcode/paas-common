@@ -11,6 +11,7 @@ type MysqlConfig struct {
 }
 
 func GetMysqlConfig(config config.Config, path ...string) *MysqlConfig {
-	config.Get(path...).Scan(&MysqlConfig{})
-	return &MysqlConfig{}
+	myssqlConfig := &MysqlConfig{}
+	config.Get(path...).Scan(myssqlConfig)
+	return myssqlConfig
 }
