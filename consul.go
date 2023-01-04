@@ -1,4 +1,4 @@
-package common
+package paas_common
 
 import (
 	"github.com/asim/go-micro/plugins/config/source/consul/v3"
